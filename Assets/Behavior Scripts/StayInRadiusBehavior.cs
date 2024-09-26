@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StayInRadiusBehavior : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+[CreateAssetMenu(menuName = "Flock/Behavior/StayInRadius")]
+public class StayInRadiusBehavior : FlockBehavior
+{
+    
+    public Vector2 center;
+    public float radius = 15f;
+
+    public override Vector2 CalculateMove(FlockingAgent agent, List<Transform> context, Flock flock)
     {
-        
+        Vector2 centerOffset = center - (Vector2)agent.transform.position;
+        // ---- If t is zero, object is at the center of the circle ----
+        float t = centerOffset.magnitude / radius;
+        if (t < 0.9f)
+        {
+            return Vector2.zero;
+        }
+
+        // ---- squaring "t" to give it a quadratic curve ----
+        return centerOffset * t * t;
     }
 }

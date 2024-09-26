@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eee3d4a56dab69c4491423065f05ab45, type: 3}
-  m_Name: Default Flock
+  m_Name: Centered Flock
   m_EditorClassIdentifier: 
   behaviors:
   - {fileID: 11400000, guid: 8bb8bf63109d5064a9405cc2614f4e07, type: 2}
