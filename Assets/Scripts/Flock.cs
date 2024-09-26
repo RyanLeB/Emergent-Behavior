@@ -20,7 +20,7 @@ public class Flock : MonoBehaviour
     public float speedFactor = 10f;
     [Range(1f, 120f)]
     public float maxSpeed = 5f;
-    
+
     // Radius of the agents
     [Range(1f, 10f)]
     public float birdRadius = 1.5f;
@@ -46,14 +46,14 @@ public class Flock : MonoBehaviour
             FlockingAgent newAgent = Instantiate(
                 agentPrefab,
                 Random.insideUnitCircle * startingSize * flockDensity,
-                
+
                 // ------- Rotation -------
                 Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
                 transform
             );
             newAgent.name = "Seagull " + i;
             agents.Add(newAgent);
-            
+
         }
     }
 
@@ -63,6 +63,26 @@ public class Flock : MonoBehaviour
         foreach (FlockingAgent agent in agents)
         {
             List<Transform> context = GetNearbyObjects(agent);
+
+
+
+
+
+            // For testing purposes
+            agent.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, context.Count / 6f);
+            
+            
+            
+            //// Behavior takes over to direct the move direction
+            //Vector2 move = behavior.CalculateMove(agent, context, this);
+
+            //move *= speedFactor;
+            //// Limits the speed
+            //if (move.sqrMagnitude > squareMaxSpeed)
+            //{
+            //    move = move.normalized * maxSpeed;
+            //}
+            //agent.Move(move);
         }
     }
 
@@ -73,6 +93,15 @@ public class Flock : MonoBehaviour
         List<Transform> context = new List<Transform>();
         // -- Creates circle to choose what colliders are in it
         Collider2D[] contextColliders = Physics2D.OverlapCircleAll(agent.transform.position, birdRadius);
-    }
+        foreach (Collider2D c in contextColliders)
+        {
+            if (c != agent.AgentCollider)
+            {
+                context.Add(c.transform);
+            }
+        }
+        return context;
 
+    }
 }
+
