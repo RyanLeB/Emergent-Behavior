@@ -69,20 +69,20 @@ public class Flock : MonoBehaviour
 
 
             // For testing purposes
-            agent.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, context.Count / 6f);
-            
-            
-            
-            //// Behavior takes over to direct the move direction
-            //Vector2 move = behavior.CalculateMove(agent, context, this);
+            //agent.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, context.Count / 6f);
 
-            //move *= speedFactor;
-            //// Limits the speed
-            //if (move.sqrMagnitude > squareMaxSpeed)
-            //{
-            //    move = move.normalized * maxSpeed;
-            //}
-            //agent.Move(move);
+
+
+            //// Behavior takes over to direct the move direction
+            Vector2 move = behavior.CalculateMove(agent, context, this);
+
+            move *= speedFactor;
+            // Limits the speed
+            if (move.sqrMagnitude > squareMaxSpeed)
+            {
+                move = move.normalized * maxSpeed;
+            }
+            agent.Move(move);
         }
     }
 
