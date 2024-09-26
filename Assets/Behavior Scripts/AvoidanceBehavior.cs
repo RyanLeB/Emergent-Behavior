@@ -19,7 +19,8 @@ public class AvoidanceBehavior : FilteredFlockBehavior
         List<Transform> filteredContext = (filter == null) ? context : filter.Filter(agent, context);
         foreach (Transform item in filteredContext)
         {
-            if (Vector2.SqrMagnitude(item.position - agent.transform.position) < flock.SquareAvoidRadius)
+            Vector3 closestPoint = item.gameObject.GetComponent<Collider2D>().ClosestPoint(agent.transform.position);
+            if (Vector2.SqrMagnitude(closestPoint - agent.transform.position) < flock.SquareAvoidRadius)
             {
                 nAvoid++;
                 avoidanceMove += (Vector2)(agent.transform.position - item.position);
