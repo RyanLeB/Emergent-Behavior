@@ -27,6 +27,47 @@ public class FlockingAgent : MonoBehaviour
         agentFlock = flock;
     }
 
+    //public Vector2 AvoidColliders(float avoidRadius)
+    //{
+    //    Vector2 avoidanceMove = Vector2.zero;
+    //    Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, avoidRadius);
+
+    //    foreach (Collider2D collider in colliders)
+    //    {
+    //        if (collider != AgentCollider)
+    //        {
+    //            Vector2 directionToCollider = (Vector2)transform.position - (Vector2)collider.transform.position;
+    //            avoidanceMove += directionToCollider;
+    //        }
+    //    }
+
+    //    return avoidanceMove;
+    //}
+
+    //public Vector2 SeparateFromOtherAgents(float separationRadius)
+    //{
+    //    Vector2 separationMove = Vector2.zero;
+    //    int nAvoid = 0;
+    //    Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, separationRadius);
+
+    //    foreach (Collider2D collider in colliders)
+    //    {
+    //        FlockingAgent otherAgent = collider.GetComponent<FlockingAgent>();
+    //        if (otherAgent != null && otherAgent != this)
+    //        {
+    //            Vector2 directionToOtherAgent = (Vector2)transform.position - (Vector2)otherAgent.transform.position;
+    //            separationMove += directionToOtherAgent;
+    //            nAvoid++;
+    //        }
+    //    }
+
+    //    if (nAvoid > 0)
+    //    {
+    //        separationMove /= nAvoid;
+    //    }
+
+    //    return separationMove;
+    //}
 
 
     public void Move(Vector2 velocity)

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 764020076764281813}
   - component: {fileID: 2631930588091827253}
   m_Layer: 0
-  m_Name: Flock Agent Brown
+  m_Name: Flock Agent Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f53d285feebc19349a04669798fb01e3, type: 3}
-  m_Color: {r: 0.3962264, g: 0.26445788, b: 0.17755428, a: 1}
+  m_Color: {r: 0.57735837, g: 0, b: 0.5943396, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

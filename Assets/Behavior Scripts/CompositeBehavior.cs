@@ -39,6 +39,19 @@ public class CompositeBehavior : FlockBehavior
                 move += partialMove;
             }
         }
+
+
+        // ---- To avoid other agents ----
+
+        //// Add avoidance move
+        //float avoidRadius = 1.0f; // Adjust this value as needed
+        //Vector2 avoidanceMove = agent.AvoidColliders(avoidRadius);
+        //move += avoidanceMove;
+
+        //// Add separation move
+        //float separationRadius = 1.0f; // Adjust this value as needed
+        //Vector2 separationMove = agent.SeparateFromOtherAgents(separationRadius);
+        //move += separationMove;
         return move;
     }
 }

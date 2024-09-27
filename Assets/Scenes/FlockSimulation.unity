@@ -153,11 +153,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentPrefab: {fileID: 2631930588091827253, guid: 9ded0221f02a590488690bf0a0de2e4c, type: 3}
   behavior: {fileID: 11400000, guid: 53bdbfbe413f12b468e3d87e7f4d4b98, type: 2}
-  startingSize: 200
-  speedFactor: 10
-  maxSpeed: 5
+  startingSize: 100
+  speedFactor: 8
+  maxSpeed: 2.5
   birdRadius: 1.5
-  avoidMultiplier: 0.5
+  avoidMultiplier: 0.1
 --- !u!4 &206935196
 Transform:
   m_ObjectHideFlags: 0
@@ -204,11 +204,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentPrefab: {fileID: 2631930588091827253, guid: 7fec791f2a7d9834b94e25a4c29415ed, type: 3}
   behavior: {fileID: 11400000, guid: 53bdbfbe413f12b468e3d87e7f4d4b98, type: 2}
-  startingSize: 200
-  speedFactor: 10
-  maxSpeed: 5
+  startingSize: 100
+  speedFactor: 8
+  maxSpeed: 2.5
   birdRadius: 1.5
-  avoidMultiplier: 0.5
+  avoidMultiplier: 0.1
 --- !u!4 &873640695
 Transform:
   m_ObjectHideFlags: 0
@@ -256,10 +256,10 @@ MonoBehaviour:
   agentPrefab: {fileID: 2631930588091827253, guid: 41b2abcdeb9561c4e9cffe85969347df, type: 3}
   behavior: {fileID: 11400000, guid: 53bdbfbe413f12b468e3d87e7f4d4b98, type: 2}
   startingSize: 100
-  speedFactor: 10
-  maxSpeed: 5
+  speedFactor: 8
+  maxSpeed: 2.5
   birdRadius: 1.5
-  avoidMultiplier: 0.5
+  avoidMultiplier: 0.1
 --- !u!4 &1061681938
 Transform:
   m_ObjectHideFlags: 0
@@ -453,7 +453,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0.5108617, b: 0.7830189, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.1287736, b: 0.1981132, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

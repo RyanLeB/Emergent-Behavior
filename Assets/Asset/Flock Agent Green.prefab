@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 764020076764281813}
   - component: {fileID: 2631930588091827253}
   m_Layer: 0
-  m_Name: Flock Agent Yellow
+  m_Name: Flock Agent Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f53d285feebc19349a04669798fb01e3, type: 3}
-  m_Color: {r: 0.7924528, g: 0.71845835, b: 0.1009256, a: 1}
+  m_Color: {r: 0.18162967, g: 0.6886792, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
