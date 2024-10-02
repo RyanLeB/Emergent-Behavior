@@ -8,7 +8,7 @@ public class PhysicsLayerFilter : ContextFilter
 {
     public LayerMask mask;
 
-    public override List<Transform> Filter(FlockingAgent agent, List<Transform> original)
+    public override List<Transform> Filter(SchoolingAgent agent, List<Transform> original)
     {
         List<Transform> filtered = new List<Transform>();
         foreach (Transform item in original)

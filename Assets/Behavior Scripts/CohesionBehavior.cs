@@ -5,9 +5,9 @@ using UnityEngine;
 // creates asset menu
 
 [CreateAssetMenu(menuName = "Flock/Behavior/Cohesion")]
-public class CohesionBehavior : FilteredFlockBehavior
+public class CohesionBehavior : FilteredSchoolBehavior
 {
-    public override Vector2 CalculateMove(FlockingAgent agent, List<Transform> context, Flock flock)
+    public override Vector2 CalculateMove(SchoolingAgent agent, List<Transform> context, FishSchool school)
     {
         // ---- This basically says if there are no neighbors, return no adjustment in movement ----
         if (context.Count == 0)

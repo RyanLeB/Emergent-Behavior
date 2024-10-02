@@ -4,12 +4,12 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Flock/Behavior/SteeredCohesion")]
-public class SteeredCohesion : FilteredFlockBehavior
+public class SteeredCohesion : FilteredSchoolBehavior
 {
     Vector2 currentVelocity;
     public float smoothTime = 0.5f;
 
-    public override Vector2 CalculateMove(FlockingAgent agent, List<Transform> context, Flock flock)
+    public override Vector2 CalculateMove(SchoolingAgent agent, List<Transform> context, FishSchool school)
     {
         // ---- This basically says if there are no neighbors, return no adjustment in movement ----
         if (context.Count == 0)

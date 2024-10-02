@@ -40,7 +40,7 @@ public class CompositeBehaviorEditor : Editor
                 EditorGUI.LabelField(r, i.ToString());
                 r.x = 30f;
                 r.width = EditorGUIUtility.currentViewWidth - 95f;
-                cb.behaviors[i] = (FlockBehavior)EditorGUI.ObjectField(r, cb.behaviors[i], typeof(FlockBehavior), false);
+                cb.behaviors[i] = (SchoolBehavior)EditorGUI.ObjectField(r, cb.behaviors[i], typeof(SchoolBehavior), false);
                 r.x = EditorGUIUtility.currentViewWidth - 65f;
                 r.width = 60f;
                 cb.weights[i] = EditorGUI.FloatField(r, cb.weights[i]);
@@ -85,7 +85,7 @@ public class CompositeBehaviorEditor : Editor
     void AddBehavior(CompositeBehavior cb)
     {
         int oldCount = (cb.behaviors != null) ? cb.behaviors.Length : 0;
-        FlockBehavior[] newBehaviors = new FlockBehavior[oldCount + 1];
+        SchoolBehavior[] newBehaviors = new SchoolBehavior[oldCount + 1];
         float[] newWeights = new float[oldCount + 1];
         for (int i = 0; i < oldCount; i++)
         {
@@ -108,7 +108,7 @@ public class CompositeBehaviorEditor : Editor
             cb.weights = null;
             return;
         }
-        FlockBehavior[] newBehaviors = new FlockBehavior[oldCount - 1];
+        SchoolBehavior[] newBehaviors = new SchoolBehavior[oldCount - 1];
         float[] newWeights = new float[oldCount - 1];
         for (int i = 0; i < oldCount - 1; i++)
         {

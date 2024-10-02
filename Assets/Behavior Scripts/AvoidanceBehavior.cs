@@ -4,9 +4,9 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Flock/Behavior/Avoidance")]
-public class AvoidanceBehavior : FilteredFlockBehavior
+public class AvoidanceBehavior : FilteredSchoolBehavior
 {
-    public override Vector2 CalculateMove(FlockingAgent agent, List<Transform> context, Flock flock)
+    public override Vector2 CalculateMove(SchoolingAgent agent, List<Transform> context, FishSchool school)
     {
 
         // ---- This basically says if there are no neighbors, return no adjustment in movement ----
@@ -20,7 +20,7 @@ public class AvoidanceBehavior : FilteredFlockBehavior
         foreach (Transform item in filteredContext)
         {
             Vector3 closestPoint = item.gameObject.GetComponent<Collider2D>().ClosestPoint(agent.transform.position);
-            if (Vector2.SqrMagnitude(closestPoint - agent.transform.position) < flock.SquareAvoidRadius)
+            if (Vector2.SqrMagnitude(closestPoint - agent.transform.position) < school.SquareAvoidRadius)
             {
                 nAvoid++;
                 avoidanceMove += (Vector2)(agent.transform.position - item.position);

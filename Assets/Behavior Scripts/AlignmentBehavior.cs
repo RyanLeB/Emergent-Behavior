@@ -4,9 +4,9 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Flock/Behavior/Alignment")]
-public class AlignmentBehavior : FilteredFlockBehavior
+public class AlignmentBehavior : FilteredSchoolBehavior
 {
-    public override Vector2 CalculateMove(FlockingAgent agent, List<Transform> context, Flock flock)
+    public override Vector2 CalculateMove(SchoolingAgent agent, List<Transform> context, FishSchool school)
     {
         // ---- This basically says if there are no neighbors, continue same alignment ----
         if (context.Count == 0)

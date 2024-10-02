@@ -4,13 +4,13 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Flock/Behavior/Composite")]
-public class CompositeBehavior : FlockBehavior
+public class CompositeBehavior : SchoolBehavior
 {
 
-    public FlockBehavior[] behaviors;
+    public SchoolBehavior[] behaviors;
     public float[] weights;
 
-    public override Vector2 CalculateMove(FlockingAgent agent, List<Transform> context, Flock flock)
+    public override Vector2 CalculateMove(SchoolingAgent agent, List<Transform> context, FishSchool school)
     {
 
         // ---- Handles data mismatch ----
@@ -26,7 +26,7 @@ public class CompositeBehavior : FlockBehavior
         // ---- Iterate through behaviors ----
         for (int i = 0; i < behaviors.Length; i++)
         {
-            Vector2 partialMove = behaviors[i].CalculateMove(agent, context, flock) * weights[i];
+            Vector2 partialMove = behaviors[i].CalculateMove(agent, context, school) * weights[i];
 
             if (partialMove != Vector2.zero)
             {
